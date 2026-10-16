@@ -70,7 +70,7 @@ class ValueModal(object):
         return True
 
     def _port(self, global_pos):
-        local = self.widget.mapFromGlobal(QtCore.QPointF(global_pos))
+        local = self.widget.mapFromGlobal(QtCore.QPointF(global_pos).toPoint())
         sx = self.view.portWidth() / float(max(1, self.widget.width()))
         sy = self.view.portHeight() / float(max(1, self.widget.height()))
         return local.x() * sx, self.view.portHeight() - local.y() * sy
